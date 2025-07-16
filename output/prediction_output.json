@@ -1,0 +1,8 @@
+{
+  "activity": "coding",
+  "confidence": 0.98,
+  "description": "User is actively writing, debugging, and running Python code, likely for a personal assistant application.",
+  "details": "Detected Python traceback (ModuleNotFoundError for PyQt5), execution command for 'pa_buddy_ui.py' from a virtual environment, and explicit mention of debugging efforts within Cursor IDE from screen OCR. The focused text shows interaction with the 'Chatbot Buddy' which appears to be the application being developed or tested.",
+  "data_sources": "Clipboard, Screen OCR, Focused Text",
+  "timestamp": 1752639162.7333372
+}

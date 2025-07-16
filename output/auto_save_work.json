@@ -1,0 +1,51 @@
+[
+  {
+    "timestamp": "2025-07-16T09:38:13.710776",
+    "from_window": "Cursor",
+    "to_window": "Python",
+    "clipboard_content": "(.venv) jayantkapoor@Jayants-MacBook-Pro AI-Buddy % /Users/jayantkapoor/Desktop/AI-Buddy/.venv/bin/python /Users/jayantkapoor/Desktop/AI-Buddy/pa_buddy_ui.py\nTraceback (most recent call last):\n  File \"/Users/jayantkapoor/Desktop/AI-Buddy/pa_buddy_ui.py\", line 2, in <module>\n    from PyQt5.QtWidgets import (\nModuleNotFoundError: No module named 'PyQt5'",
+    "activity": "auto_save"
+  },
+  {
+    "timestamp": "2025-07-16T09:38:53.755118",
+    "from_window": "Python",
+    "to_window": "Google Chrome",
+    "clipboard_content": "(.venv) jayantkapoor@Jayants-MacBook-Pro AI-Buddy % /Users/jayantkapoor/Desktop/AI-Buddy/.venv/bin/python /Users/jayantkapoor/Desktop/AI-Buddy/pa_buddy_ui.py\nTraceback (most recent call last):\n  File \"/Users/jayantkapoor/Desktop/AI-Buddy/pa_buddy_ui.py\", line 2, in <module>\n    from PyQt5.QtWidgets import (\nModuleNotFoundError: No module named 'PyQt5'",
+    "activity": "auto_save"
+  },
+  {
+    "timestamp": "2025-07-16T09:39:23.799400",
+    "from_window": "Google Chrome",
+    "to_window": "Cursor",
+    "clipboard_content": "(.venv) jayantkapoor@Jayants-MacBook-Pro AI-Buddy % /Users/jayantkapoor/Desktop/AI-Buddy/.venv/bin/python /Users/jayantkapoor/Desktop/AI-Buddy/pa_buddy_ui.py\nTraceback (most recent call last):\n  File \"/Users/jayantkapoor/Desktop/AI-Buddy/pa_buddy_ui.py\", line 2, in <module>\n    from PyQt5.QtWidgets import (\nModuleNotFoundError: No module named 'PyQt5'",
+    "activity": "auto_save"
+  },
+  {
+    "timestamp": "2025-07-16T09:39:43.842415",
+    "from_window": "Cursor",
+    "to_window": "Python",
+    "clipboard_content": "(.venv) jayantkapoor@Jayants-MacBook-Pro AI-Buddy % /Users/jayantkapoor/Desktop/AI-Buddy/.venv/bin/python /Users/jayantkapoor/Desktop/AI-Buddy/pa_buddy_ui.py\nTraceback (most recent call last):\n  File \"/Users/jayantkapoor/Desktop/AI-Buddy/pa_buddy_ui.py\", line 2, in <module>\n    from PyQt5.QtWidgets import (\nModuleNotFoundError: No module named 'PyQt5'",
+    "activity": "auto_save"
+  },
+  {
+    "timestamp": "2025-07-16T09:41:23.921574",
+    "from_window": "Python",
+    "to_window": "Calendar",
+    "clipboard_content": "(.venv) jayantkapoor@Jayants-MacBook-Pro AI-Buddy % /Users/jayantkapoor/Desktop/AI-Buddy/.venv/bin/python /Users/jayantkapoor/Desktop/AI-Buddy/pa_buddy_ui.py\nTraceback (most recent call last):\n  File \"/Users/jayantkapoor/Desktop/AI-Buddy/pa_buddy_ui.py\", line 2, in <module>\n    from PyQt5.QtWidgets import (\nModuleNotFoundError: No module named 'PyQt5'",
+    "activity": "auto_save"
+  },
+  {
+    "timestamp": "2025-07-16T09:42:04.296755",
+    "from_window": "Calendar",
+    "to_window": "Python",
+    "clipboard_content": "(.venv) jayantkapoor@Jayants-MacBook-Pro AI-Buddy % /Users/jayantkapoor/Desktop/AI-Buddy/.venv/bin/python /Users/jayantkapoor/Desktop/AI-Buddy/pa_buddy_ui.py\nTraceback (most recent call last):\n  File \"/Users/jayantkapoor/Desktop/AI-Buddy/pa_buddy_ui.py\", line 2, in <module>\n    from PyQt5.QtWidgets import (\nModuleNotFoundError: No module named 'PyQt5'",
+    "activity": "auto_save"
+  },
+  {
+    "timestamp": "2025-07-16T09:42:34.334523",
+    "from_window": "Python",
+    "to_window": "Cursor",
+    "clipboard_content": "(.venv) jayantkapoor@Jayants-MacBook-Pro AI-Buddy % /Users/jayantkapoor/Desktop/AI-Buddy/.venv/bin/python /Users/jayantkapoor/Desktop/AI-Buddy/pa_buddy_ui.py\nTraceback (most recent call last):\n  File \"/Users/jayantkapoor/Desktop/AI-Buddy/pa_buddy_ui.py\", line 2, in <module>\n    from PyQt5.QtWidgets import (\nModuleNotFoundError: No module named 'PyQt5'",
+    "activity": "auto_save"
+  }
+]

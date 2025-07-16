@@ -1,0 +1,21 @@
+# Core AI/ML Libraries
+langchain==0.1.0
+langchain_google_genai==0.0.6
+google-generativeai==0.3.2
+
+# Computer Vision and Image Processing
+opencv-python==4.8.1.78
+pytesseract==0.3.10
+Pillow==10.1.0
+numpy>=1.26.0
+
+# System and GUI
+PyQt5>=5.15.0
+pyperclip==1.8.2
+mss==9.0.1
+
+# Environment and Utilities
+python-dotenv>=1.0.0
+
+# Windows-specific dependencies (only installed on Windows)
+pywin32==306; sys_platform == "win32"

@@ -1,0 +1,35 @@
+{
+  "name": "text-extractor",
+  "displayName": "Text Extractor",
+  "description": "A VS Code extension to extract selected text",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:plaintext",
+    "onStartupFinished",
+    "onCommand:text-extractor.extractText"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "text-extractor.extractText",
+        "title": "Text Extractor: Extract Text"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.4",
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.0.0",
+    "vsce": "^2.10.0"
+  }
+}
