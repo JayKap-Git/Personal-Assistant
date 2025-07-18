@@ -1,105 +1,163 @@
-# AI-Buddy Project Index
+#  AI Buddies System
 
-## Project Overview
-AI-Buddy is a comprehensive AI-powered personal assistant system that includes chatbot functionality, focus automation, activity analysis, and GUI interfaces.
+##  Overview
 
-## Core Python Files
+AI Buddies is a privacy-first, real-time desktop assistant system powered entirely by **Google Gemini** LLMs. It senses user activity from various sources like the active window, clipboard, screen content (via OCR), and live code editor data to determine what the user is doing—and launches a corresponding assistant.
 
-### Main Application Files
-- **`run_chatbot.py`** - Main entry point for running the chatbot buddy
-- **`pa_buddy_ui.py`** - PyQt5-based GUI for the personal assistant buddy
-- **`focus_control_ui.py`** - PyQt5-based GUI for focus automation controls
-- **`activity_analyzer.py`** - AI-powered activity analysis using Google Gemini
-- **`gatheruserdata.py`** - Data collection module for user activity monitoring
-- **`test_focus_automation.py`** - Test suite for focus automation functionality
+Only one UI panel is used for interacting with the system: the **Personal Assistant Buddy UI**, which consolidates chat, focus controls, and contextual productivity tools into a single PyQt5 interface.
 
-### Buddy Modules (`buddies/`)
-- **`chatbot_buddy.py`** - Core chatbot implementation with Google Gemini
-- **`focus_automation.py`** - Focus automation and productivity tools
-- **`personal_assistant.py`** - Main personal assistant orchestrator
+---
 
-### Configuration Files
-- **`requirements.txt`** - Python dependencies (updated with all project dependencies)
-- **`block_sites.sh`** - Shell script for website blocking functionality
+##  Core Features
 
-## VS Code Extension (`text/`)
-A VS Code extension for text extraction functionality:
-- **`package.json`** - Extension manifest and dependencies
-- **`package-lock.json`** - Locked dependency versions
-- **`tsconfig.json`** - TypeScript configuration
-- **`eslint.config.mjs`** - ESLint configuration
-- **`src/extension.ts`** - Main extension source code
-- **`text-extractor-0.0.1.vsix`** - Compiled VS Code extension
-- **`CHANGELOG.md`** - Extension changelog
-- **`README.md`** - Extension documentation
-- **`vsc-extension-quickstart.md`** - Quick start guide
+- **Live Context Capture**: Polls active window, clipboard, screenshots (OCR), and code editor contents every 10–20s.
+- **Activity Analysis**: Uses Gemini LLM to classify user activity like `coding`, `researching`, `watching`, etc.
+- **Personal Assistant Buddy**:
+  - Context summarization
+  - Adaptive nudges and motivation
+  - Meeting scheduling
+  - Focus Mode and wellness suggestions
+- **Focus Automation**:
+  - Auto-blocks distractions
+  - Triggers based on activity intensity or time of day
+- **Modular UI**: One single, tab-based floating window for interaction with chat, focus controls, and summaries.
 
-### VS Code Configuration (`text/.vscode/`)
-- **`extensions.json`** - Recommended extensions
-- **`launch.json`** - Debug configuration
-- **`settings.json`** - Workspace settings
-- **`tasks.json`** - Build tasks
+---
 
-## Dependencies
+##  File Structure
 
-### Core AI/ML Libraries
-- `langchain==0.1.0` - LangChain framework for AI applications
-- `langchain_google_genai==0.0.6` - Google Gemini integration for LangChain
-- `google-generativeai==0.3.2` - Google Generative AI SDK
-
-### Computer Vision and Image Processing
-- `opencv-python==4.8.1.78` - OpenCV for computer vision
-- `pytesseract==0.3.10` - OCR (Optical Character Recognition)
-- `Pillow==10.1.0` - Python Imaging Library
-- `numpy>=1.26.0` - Numerical computing library
-
-### System and GUI
-- `PyQt5>=5.15.0` - GUI framework for desktop applications
-- `pyperclip==1.8.2` - Cross-platform clipboard operations
-- `mss==9.0.1` - Screenshot capture library
-
-### Environment and Utilities
-- `python-dotenv>=1.0.0` - Environment variable management
-
-### Platform-Specific
-- `pywin32==306` - Windows-specific utilities (Windows only)
-
-## Project Structure
 ```
-AI-Buddy/
-├── buddies/                    # Core AI modules
-│   ├── chatbot_buddy.py       # Chatbot implementation
-│   ├── focus_automation.py    # Focus automation tools
-│   └── personal_assistant.py  # Main assistant orchestrator
-├── text/                      # VS Code extension
-│   ├── src/
-│   │   └── extension.ts       # Extension source code
-│   ├── .vscode/              # VS Code configuration
-│   └── *.json, *.md          # Extension metadata
-├── output/                    # Data output directory
-├── venv/                      # Python virtual environment
-├── *.py                       # Main application files
-├── requirements.txt           # Python dependencies
-└── PROJECT_INDEX.md          # This file
+├── gatheruserdata.py          # Collects window, clipboard, OCR, and editor data
+├── activity_analyzer.py       # Starts gatherer + LLM-based activity analysis
+├── pa_buddy_ui.py             # PyQt5 interface for interaction with the assistant
+├── run_chatbot.py             # (Optional) CLI version of the PA Buddy
+├── focus_control_ui.py        # Focus logic backend (integrated with UI)
+├── test_focus_automation.py   # Testing script for focus control + analysis
+├── block_sites.sh             # Blocks distracting sites (e.g., YouTube, Reddit)
+├── output/                    # Contains all live & historical context JSON
+└── start_pa_buddy.sh          # Launches the entire system
 ```
 
-## Key Features
-1. **AI-Powered Chatbot** - Google Gemini integration for intelligent conversations
-2. **Focus Automation** - Productivity tools and website blocking
-3. **Activity Analysis** - AI-powered analysis of user activity patterns
-4. **GUI Interfaces** - PyQt5-based desktop applications
-5. **VS Code Extension** - Text extraction functionality
-6. **Data Collection** - Comprehensive user activity monitoring
+---
 
-## Setup Instructions
-1. Create virtual environment: `python3 -m venv venv`
-2. Activate environment: `source venv/bin/activate`
-3. Install dependencies: `pip install -r requirements.txt`
-4. Set up environment variables (Google API key)
-5. Run applications as needed
+##  Setup Instructions
 
-## Development Notes
-- All Python files are properly indexed and dependencies are documented
-- VS Code extension is self-contained in the `text/` directory
-- Cross-platform compatibility (Windows-specific dependencies handled)
-- Comprehensive dependency management with version pinning 
+### Step 1: Clone & Setup Environment
+```bash
+git clone <repo-url>
+cd AI-Buddies
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+### Step 2: Install Tesseract OCR
+```bash
+# macOS
+brew install tesseract
+
+# Ubuntu
+sudo apt install tesseract-ocr
+
+# Windows: download from https://github.com/tesseract-ocr/tesseract
+```
+
+### Step 3: Add Gemini Key
+Create a `.env` file with:
+```
+GOOGLE_API_KEY=your_key_here
+```
+
+---
+
+##  Running the System
+
+You can run the entire system using:
+```bash
+./start_pa_buddy.sh
+```
+
+Or manually:
+
+1. Start context + activity analyzer:
+```bash
+python activity_analyzer.py
+```
+
+2. Start the PA Buddy UI:
+```bash
+python pa_buddy_ui.py
+```
+
+---
+
+##  Activity Classification
+
+The LLM classifies user activity into:
+- `coding`
+- `browsing`
+- `researching`
+- `emailing`
+- `messaging`
+- `watching`
+- `writing`
+- `designing`
+- `gaming`
+- `working`
+- `idle`
+- `unknown`
+
+The result is stored in `output/prediction_output.json` and updated every 20s.
+
+---
+
+##  Personal Assistant Buddy UI
+
+The PyQt5-based interface supports:
+- Activity display (scrollable and styled)
+- Contextual chatbot using Gemini
+- Focus control toggle and break reminders
+- Meeting scheduler (natural language → calendar)
+
+---
+
+##  Testing Focus Features
+
+To simulate and test:
+```bash
+python test_focus_automation.py
+```
+
+This tests:
+- Break reminders
+- Night mode
+- Auto-save buffer
+- Focus mode toggle
+- Mock coding session
+
+---
+
+##  Privacy and Local-Only Policy
+
+- No data is sent to the cloud (except Gemini API calls).
+- VS Code plugin writes code locally to a text file.
+- Screenshot OCR, clipboard capture, and prediction are fully offline.
+
+---
+
+##  Future Work
+
+- Add emotional tone detection for replies
+- Long-term personalization using vector memory
+- Micro-model fallback mode for edge devices
+- Third-party buddy agent marketplace
+
+---
+
+##  References
+
+- [Google Gemini API](https://ai.google.dev/gemini-api/docs)
+- [Tesseract OCR](https://tesseract-ocr.github.io/tessdoc/)
+- [LangChain](https://python.langchain.com/)
+- [PyQt](https://riverbankcomputing.com/software/pyqt/)
+
